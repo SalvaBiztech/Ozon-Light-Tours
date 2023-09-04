@@ -1,0 +1,6 @@
+/* This is all you. */
+
+.content-editor ul li {
+    list-style: disc !important;
+    margin-left: 15px !important;
+}

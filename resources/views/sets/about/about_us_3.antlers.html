@@ -1,0 +1,127 @@
+<section class="about-section" style="background-color: {{background_color}};">
+<div
+    class="px-4 py-4 2xl:container 2xl:mx-auto lg:py-8 lg:px-28 md:py-6 md:px-6"
+>
+    <p
+        class="pb-2 text-sm font-normal leading-3 capitalize cursor-pointer text-primary hover:text-indigo-800"
+    >
+    {{heading}}
+    </p>
+    <div class="flex flex-col gap-12 lg:flex-row lg:gap-8 sm:gap-10">
+        <div class="w-full lg:w-6/12">
+            <h2
+                class="w-full text-3xl font-bold leading-9 capitalize lg:text-4xl lg:leading-10"
+            >
+            {{about_title}}
+            </h2>
+            <div
+                class="mt-6 text-base font-normal leading-8 text-gray-600 content-editor"
+            >
+                {{description}}
+        </div>
+        </div>
+        <div class="w-full lg:w-6/12">
+            <img
+                class="hidden w-full rounded-lg shadow-md h-96 lg:block"
+                src="{{about_us_image}}"
+                alt="people discussing on board"
+            />
+            <img
+                class="hidden w-full rounded-lg shadow-md lg:hidden sm:block"
+                src="{{about_us_image}}"
+                alt="people discussing on board"
+            />
+            <img
+                class="block w-full rounded-lg shadow-md sm:hidden"
+                src="{{about_us_image}}"
+                alt="people discussing on board"
+            />
+        </div>
+    </div>
+    <div class="flex justify-start mt-5">
+        {{ partial:components.buttons.buttons }}
+    </div>
+
+    <div class="relative py-4 mt-3">
+        <hr class="absolute z-10 hidden w-full bg-gray-200 lg:block top-2/4" />
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 py-10 sm:grid-cols-3 sm:gap-8">
+        {{widgets}} {{if type == 'widget'}}
+        <div>
+            <p
+                class="mt-6 text-base font-semibold leading-5 text-gray-800 uppercase lg:text-xl lg:leading-4"
+            >
+                {{heading}}
+            </p>
+            <p
+                class="mt-3 text-base font-normal leading-6 text-gray-600"
+            >
+                {{description}}
+            </p>
+
+        
+        </div>
+        {{/if}} {{/widgets}}
+    </div>
+
+    <div
+        class="flex flex-col justify-between gap-16 mt-16 lg:flex-row md:gap-14 lg:mt-20"
+    >
+        <div class="w-full lg:w-6/12">
+            {{content}} {{if type === 'block'}}
+            <h2
+                class="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9 dark:text-white"
+            >
+                {{title}}
+            </h2>
+            <div
+                class="w-full mt-6 text-base font-normal leading-6 text-gray-600 content-editor dark:text-gray-200 lg:w-10/12 xl:w-9/12"
+            >
+                {{content_editor}}
+            </div>
+            {{/if}}
+            {{if type === 'video'}}
+            <video class="w-full border-4 rounded border-brand-100" controls>
+                <source src="{{video}}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {{/if}}
+            {{/content}}
+        </div>
+        <div class="w-full lg:w-6/12">
+            <div
+                class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12"
+            >
+                <!-- Cards -->
+                {{cards}}
+                {{if type === 'card'}}
+                <div class="flex p-4 shadow-md">
+                    <div class="mr-6">
+                        <img
+                            class="mr-6"
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/about-us-3-svg4.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="">
+                        <p
+                            class="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6 dark:text-white"
+                        >
+                        {{card_title}}
+                        </p>
+                        <p
+                            class="mt-2 text-base font-normal leading-6 text-gray-600 dark:text-gray-200"
+                        >
+                        {{card_description}}
+                        </p>
+                    </div>
+                </div>
+                {{/if}}
+                {{/cards}}
+            </div>
+        </div>
+    </div>
+    
+</div>
+</section>

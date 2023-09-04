@@ -1,0 +1,31 @@
+<section class="bg-anicent/30 dark:bg-gray-900">
+    <div class="container px-6 py-10 mx-auto max-w-screen-xl">
+        <div class="mt-6 md:flex md:items-center md:justify-between">
+            <div>
+                <h2 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
+                    {{title}}
+                </h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-4">
+            {{widgets}}
+            {{if type == 'default_widget'}}
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-bold mb-4">{{heading}}</h3>
+            </div>
+            {{elseif type == 'tripadvisor'}}
+            <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
+                <h3 class="text-lg font-bold mb-4">{{heading}}</h3>
+                {{theme:tripadvisor_code}}
+            </div>
+            {{elseif type == 'safaribookings'}}
+            <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
+                <h3 class="text-lg font-bold mb-4">{{heading}}</h3>
+                {{theme:safaribookings_code}}
+            </div>
+            {{/if}}
+            {{/widgets}}
+        </div>
+    </div>
+</section>

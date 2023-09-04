@@ -1,0 +1,97 @@
+<section
+    id="packages"
+    class="py-12"
+    style="background-color: {{ background_color }}"
+>
+    <div class="2xl:container 2xl:mx-auto">
+        <div class="px-4 py-8 lg:px-20 md:px-6 md:py-12">
+            <div>
+                <h1
+                    class="text-xl font-semibold text-center text-gray-800 uppercase lg:text-3xl dark:text-white dark:text-gray-50"
+                >
+                    {{title}}
+                </h1>
+            </div>
+
+            <div
+                class="w-full mt-8 bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+            >
+                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                    <ul
+                        class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                        id="myTab"
+                        data-tabs-toggle="#myTabContent"
+                        role="tablist"
+                    >
+                    {{tabs}}
+                     {{if type === 'tab'}}
+                        <li class="mr-2" role="presentation">
+                            <button
+                                class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 dark:border-blue-500"
+                                id="tab-{{id}}"
+                                data-tabs-target="#{{tab_heading}}"
+                                type="button"
+                                role="tab"
+                                aria-controls="{{tab_heading}}"
+                                {{if is_active}} 
+                                aria-selected="true"
+                                {{else}}
+                                aria-selected="false"
+                                {{/if}}
+                            >
+                            {{tab_heading}}
+                            </button>
+                        </li>
+                        {{/if}} 
+                        {{/tabs}}
+                    </ul>
+                </div>
+                <div id="myTabContent">
+                    {{tabs}}
+                    {{if type === 'tab'}}
+                    <div
+                        class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                        id="{{tab_heading}}"
+                        role="tabpanel"
+                        aria-labelledby="tab-{{id}}"
+                    >
+
+                    <section>
+                        <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+                          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                            <div
+                              class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
+                            >
+                              <img
+                                alt="{{alt}}"
+                                src="{{image}}"
+                                class="absolute inset-0 object-cover w-full h-full"
+                              />
+                            </div>
+                      
+                            <div class="lg:py-24">
+                              <h2 class="text-3xl font-bold sm:text-4xl">
+                                {{title}}
+                              </h2>
+                      
+                              <div class="mt-4 text-gray-600">
+                                {{description}}
+                              </div>
+                      
+                              <div class="flex justify-start mt-12 mb-4">
+                                {{partial:components.buttons.button}}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                    </div>
+                    {{/if}}
+                    {{/tabs}}
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

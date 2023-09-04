@@ -1,0 +1,9 @@
+{{ if children }} {{if menu_type === 'dropdown'}}
+{{partial:components.navigations.dropdown_menu}} {{elseif menu_type === 'mega_menu'}}
+{{partial:components.navigations.mega_menu}} {{/if}} {{else}}
+<a
+    class="font-bold text-gray-700 uppercase hover:text-gray-400 sm:py-6"
+    href="{{uri}}"
+    >{{title}}</a
+>
+{{ /if }}

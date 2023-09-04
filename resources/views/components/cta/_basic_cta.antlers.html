@@ -1,0 +1,29 @@
+<section class="py-2 text-center text-gray-800 md:text-left" style="background-color: #ffe7bd;">
+    <div
+        class="container flex items-center justify-center px-4 py-6 mx-auto sm:px-3 2xl:px-0"
+    >
+        <div class="flex flex-wrap justify-center w-full">
+            <div class="w-full px-3 grow-0 shrink-0 basis-auto lg:w-10/12">
+                <div class="grid items-center md:grid-cols-3 gap-x-3">
+                    <div class="mb-4 md:mb-0">
+                        <h2 class="text-3xl font-bold">
+                            Are you interested?
+                            <br />
+                            <span class="text-xl text-brand-200">WHATSAPP OR CALL</span>
+                        </h2>
+                    </div>
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <span class="mr-3 whatsapp">
+                            <i class="fa-brands fa-3x text-green-500 {{company:whatsapp_icon}}"></i>
+                        </span>
+                        <h2 class="text-2xl font-bold">{{company:phone}}</h2> 
+                    </div>
+                    <div class="mb-4 md:mb-0">
+                        {{partial:components.modal_form}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

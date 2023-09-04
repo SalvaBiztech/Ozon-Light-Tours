@@ -1,0 +1,33 @@
+<section id="best_seller_packages" class="py-12"
+style="background-color: {{background_color}};"
+>
+    <div class="2xl:container 2xl:mx-auto">
+        <div class="px-4 py-8 lg:px-20 md:px-6 md:py-5">
+            <div>
+                <h2
+                    class="text-xl font-semibold text-center text-gray-800 uppercase lg:text-3xl mb-8"
+                >
+                    {{title}}
+                </h2>
+                <h2
+                class="text-xl font-semibold text-center text-yellow-800 uppercase lg:text-2xl"
+            >
+                {{subtitle}}
+            </h2>
+            <p class="px-8 mb-8 text-gray-800 text-center">
+                {{description}}
+            </p>
+            </div>
+            <div
+                class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 md:mt-10"
+            >
+                {{entries_list}}
+                {{partial:components.cards.product_card}}
+                {{/entries_list}}
+            </div>
+          <div class="flex justify-center mt-12 mb-4">
+            {{partial:components.buttons.button}}
+          </div>
+        </div>
+    </div>
+</section>

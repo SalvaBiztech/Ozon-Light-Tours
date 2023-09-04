@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ title ?? site:name }}</title>
+        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" />
+        {{ livewire:styles }}
+    </head>
+    <body class="font-sans leading-normal text-gray-800 bg-gray-100">
+        <header class="basic-header">
+            {{partial:partials.navbar_2}}
+        </header>
+       
+        {{ template_content }}
+        <footer class="basic-footer">
+            {{partial:partials.footer}}
+        </footer>
+        <script src="{{ mix src='/js/site.js' }}"></script>
+        {{ livewire:scripts }}
+    </body>
+</html>

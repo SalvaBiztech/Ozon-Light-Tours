@@ -1,0 +1,33 @@
+<section class="py-10 bg-white">
+    <div class="px-6 lg:block xl:px-0">
+        <div class="container mx-auto">
+            <div class="flex flex-row">
+                <div
+                    role="article"
+                    class="flex flex-col justify-center w-full py-10 items-left"
+                >
+                    <h2
+                        class="text-base uppercase font-bold text-center text-gray-800 lg:text-3xl"
+                    >
+                        {{title}}
+                    </h2>
+                </div>
+            </div>
+            <div class="swiper slider">
+                <!-- Additional required wrapper -->
+                <div class="mb-10 swiper-wrapper py-4">
+                    {{popular_entries}}
+                    <div class="w-full swiper-slide">
+                        {{partial:components.cards.default_card}}
+                    </div>
+                    {{/popular_entries}}
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next  bg-orange-600 p-8 rounded-lg text-white"></div>
+                <div class="swiper-button-prev bg-orange-600 p-8 rounded-lg text-white"></div>
+
+            </div>
+        </div>
+    </div>
+</section>

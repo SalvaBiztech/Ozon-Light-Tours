@@ -1,0 +1,10 @@
+name: Admin
+super: true
+id: 7dba8970-3db2-4822-9aba-29c5bd926255
+password_hash: $2y$10$5uybSF1Uzac5nR61qRTfQO2LDSrXv7f8YpacrLpJNldCCaw5iqEK6
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing
+    destinations:
+      after_save: continue_editing

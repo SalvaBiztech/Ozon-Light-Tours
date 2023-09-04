@@ -1,0 +1,21 @@
+<section class="bg-blue-900" style="background-color: {{background_color}};">
+    <div class="container px-3 py-2 mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+            {{features}} {{if type === 'feature'}}
+            <div class="flex items-center justify-center">
+                {{if has_icon}}
+                <i class="fa-solid text-white text-base {{icon}} mr-2"></i> 
+                {{/if}}
+                <h1
+                    class="text-base font-semibold text-white"
+                >
+                    {{heading}}
+                </h1>
+                <!-- <p class="mt-2 text-gray-50 dark:text-gray-400">
+                    {{description}}
+                </p> -->
+            </div>
+            {{/if}} {{/features}}
+        </div>
+    </div>
+</section>

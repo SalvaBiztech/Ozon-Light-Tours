@@ -1,0 +1,57 @@
+<section class="py-10" style="background-color: {{background_color}};">
+    <div class="px-6 lg:block xl:px-0">
+        <div class="container max-w-screen-xl mx-auto">
+            <div class="flex flex-row">
+                <div
+                    role="article"
+                    class="flex flex-col justify-center w-full py-10 items-left"
+                >
+                    <h1
+                        class="text-2xl font-bold text-gray-800 dark:text-white md:text-5xl"
+                    >
+                        {{title}}
+                    </h1>
+                </div>
+            </div>
+            <div class="swiper slider-3">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    {{popular_entries}}
+                    <div class="w-full swiper-slide">
+                        <div
+                            class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
+                            style="background-position: 50%"
+                            data-mdb-ripple="true"
+                            data-mdb-ripple-color="light"
+                        >
+                            <img src="{{featured_image}}" class="w-full h-72" />
+                            <a href="{{uri}}">
+                                <div
+                                    class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                                    style="background-color: rgba(0, 0, 0, 0.2)"
+                                >
+                                    <div
+                                        class="flex justify-start items-end h-full"
+                                    >
+                                        <div class="text-white m-6">
+                                            <h5
+                                                class="font-bold text-lg mb-3 uppercase"
+                                            >
+                                                {{title}}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {{/popular_entries}}
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-button-next"></div> -->
+                <!-- <div class="swiper-button-prev"></div> -->
+            </div>
+        </div>
+    </div>
+</section>

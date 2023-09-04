@@ -1,0 +1,17 @@
+<section style="background-color: {{background_color}};" class="bg-white py-5">
+    <div class="container px-6 py-5 mx-auto">
+        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl">
+            <span class="underline decoration-orange-500 text-gray-800">{{title}}</span>
+        </h1>
+
+        <p class="mt-4 text-gray-500 xl:mt-6">
+            {{description}}
+        </p>
+
+        <div class="grid grid-cols-1 gap-4 mt-4 xl:mt-6 xl:gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {{features}} {{if type === 'feature'}}
+            {{partial:components.cards.feature_card}}
+            {{/if}} {{/features}}
+        </div>
+    </div>
+</section>

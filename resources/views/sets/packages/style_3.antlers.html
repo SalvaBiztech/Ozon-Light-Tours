@@ -1,0 +1,95 @@
+<section
+    id="packages"
+    class="py-12"
+    style="background-color: {{ background_color }}"
+>
+    <div class="2xl:container 2xl:mx-auto">
+        <div class="px-4 py-8 lg:px-20 md:px-6 md:py-12">
+            <div>
+                <h1
+                    class="text-xl font-semibold text-center text-gray-800 uppercase lg:text-3xl dark:text-white dark:text-gray-50"
+                >
+                    {{title}}
+                </h1>
+            </div>
+
+            <div
+                class="w-full mt-8 bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+            >
+           
+                <div class="sm:hidden">
+                    <label for="tabs" class="sr-only">Select tab</label>
+                    <select
+                        id="tabs"
+                        class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 sm:text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    >
+                        <option>Statistics</option>
+                        <option>Services</option>
+                        <option>FAQ</option>
+                    </select>
+                </div>
+                
+                <ul
+                    class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400"
+                    id="fullWidthTab"
+                    data-tabs-toggle="#fullWidthTabContent"
+                    role="tablist"
+                >
+                {{tabs}}
+                     {{if type === 'tab'}}
+                    <li class="w-full">
+                        <button
+                            id="tab-{{id}}"
+                            data-tabs-target="#{{tab_heading}}"
+                            type="button"
+                            role="tab"
+                            aria-controls="{{tab_heading}}"
+                            {{if toggle_active}} 
+                            aria-selected="true"
+                            {{else}}
+                            aria-selected="false"
+                            {{/if}}
+                            class="inline-block w-full p-4 text-blue-600 border-blue-600 rounded-tl-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 dark:border-blue-500"
+                        >
+                            {{tab_heading}}
+                        </button>
+                    </li>
+                    {{/if}} 
+                    {{/tabs}}
+                   
+                </ul>
+                <div
+                    id="fullWidthTabContent"
+                    class="border-t border-gray-200 dark:border-gray-600"
+                >
+                {{tabs}}
+                    {{if type === 'tab'}}
+                   
+                    <div
+                        class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800"
+                        id="{{tab_heading}}"
+                        role="tabpanel"
+                        aria-labelledby="tab-{{id}}">
+
+                        <h3 class="mb-2 text-3xl font-extrabold text-center">
+                            {{tab_title}}
+                        </h3>
+
+                        <div
+                            class="grid grid-cols-2 gap-8 p-4 mx-auto text-gray-900 max-w-7xl sm:grid-cols-3"
+                        >
+
+                        {{entries_list}}
+                          {{partial:components.cards.ecommerce_card}}
+                        {{/entries_list}}
+                        </div>
+                    </div>
+                
+                    {{/if}}
+                    {{/tabs}}
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>

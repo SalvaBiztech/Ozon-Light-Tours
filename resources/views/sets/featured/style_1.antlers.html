@@ -1,0 +1,28 @@
+<section class="py-20 text-gray-800">
+    <div class="container px-6 py-3 mx-auto max-w-7xl">
+        <h2 class="mb-8 text-3xl font-bold text-center body-lato">{{title}}</h2>
+        <div class="mb-6 font-sans font-light leading-8 lg:text-center w-ful">
+            {{description}}
+          </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+            {{featured_grid}}
+            <div class="">
+                {{entries_list}} {{partial:components.overlay_card}} {{/entries_list}}
+            </div>
+            {{/featured_grid}}
+        </div>
+    </div>
+</section>
+
+<!-- 
+<div class="grid gap-6 lg:grid-cols-7">
+    {{featured_entries}} {{if type === 'single'}}
+    <div class="col-span-3">
+        {{entry}} {{partial:components.overlay_card}} {{/entry}}
+    </div>
+    {{elseif type === 'multiple'}}
+    <div class="grid col-span-4 gap-6 lg:grid-cols-2">
+        {{entries}} {{partial:components.overlay_card}} {{/entries}}
+    </div>
+    {{/if}} {{/featured_entries}}
+</div> -->

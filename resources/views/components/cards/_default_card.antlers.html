@@ -1,0 +1,16 @@
+<div class="relative flex items-center justify-center w-full mb-4 h-80 group" >
+    <img
+        class="object-cover object-center w-full h-full rounded"
+        src="{{featured_image}}"
+        alt="{{title}}"
+    />
+    <a
+        href="{{uri}}"
+        class="absolute z-10 w-80 px-3 py-3 text-sm font-medium leading-none text-center text-white uppercase bg-secondary-600 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4"
+    >
+        {{title}}
+    </a>
+    <div
+        class="absolute z-0 w-80 px-20 py-6 transition duration-500 bg-opacity-50 opacity-0 bg-orange-300 group-hover:opacity-100 bottom-3"
+    ></div>
+</div>

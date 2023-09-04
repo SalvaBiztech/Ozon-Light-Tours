@@ -1,0 +1,11 @@
+<div class="w-full">
+    {{if theme:header_navbar === 'topbar'}}
+    {{partial:sets.headers.topbar_header}}
+    {{elseif theme:header_navbar === 'mega_menu'}}
+    {{partial:sets.headers.mega_menu_header}}
+    {{elseif theme:headers_navbar === 'sticky'}}
+    {{partial:sets.headers.sticky_header}}
+    {{else}}
+    {{partial:sets.header.base_header}}
+    {{/if}}
+</div>

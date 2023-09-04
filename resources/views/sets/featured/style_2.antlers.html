@@ -1,0 +1,18 @@
+<section class="py-20 text-gray-800">
+    <div class="container px-6 py-3 mx-auto max-w-7xl">
+        <h2 class="mb-8 text-3xl font-bold text-center body-lato">{{title}}</h2>
+        <div class="mb-6 font-sans font-light leading-8 lg:text-center w-ful">
+            {{description}}
+          </div>
+
+        <div class="flex flex-wrap mt-6 mb-4 -m-4">
+            {{featured_grid}}
+            {{entries_list}}
+            <div class="w-full p-3 xl:w-1/4 md:w-1/2">
+                {{partial:components.overlay_card}}
+            </div>
+            {{/entries_list}}
+            {{/featured_grid}}
+        </div>
+    </div>
+</section>

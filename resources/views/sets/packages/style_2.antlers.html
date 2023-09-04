@@ -1,0 +1,40 @@
+<section id="slider-packages" class="py-12" style="background-color: {{ background_color }}">
+    <div class="container mx-auto">
+        <div class="px-4 py-8 lg:px-12 md:px-6 md:py-12">
+            <div class="mb-8">
+                <h1
+                    class="text-xl font-semibold text-center text-gray-800 lg:text-3xl uppercase"
+                >
+                    {{title}}
+                </h1>
+                <h2
+                class="text-xl font-semibold text-center text-brand capitalize lg:text-2xl"
+            >
+                {{subtitle}}
+            </h2>
+            </div>
+            <div class="px-3 swiper packages-slider-3">
+                <div
+                    class="p-6 bg-orange-600 rounded-lg swiper-button-next"
+                ></div>
+                <div
+                    class="p-6 bg-orange-600 rounded-lg swiper-button-prev"
+                ></div>
+                <!-- Additional required wrapper -->
+                <div class="py-10 swiper-wrapper">
+                    {{entries_list}}
+                    <div class="w-full space-x-10 swiper-slide">
+                        {{partial:components.cards.product_card}}
+                    </div>
+                    {{/entries_list}}
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="flex justify-center mt-12 mb-4">
+                {{partial:components.buttons.button}}
+            </div>
+        </div>
+    </div>
+</section>

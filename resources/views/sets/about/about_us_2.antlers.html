@@ -1,0 +1,82 @@
+<section class="about-us" style="background-color: {{background_color}};">
+    <div
+        class="px-4 2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9"
+    >
+        <div class="w-full lg:w-10/12">
+            <p
+                class="text-sm font-normal leading-3 cursor-pointer text-primary-900 dark:text-indigo-500 hover:text-indigo-800"
+            >
+                {{heading}}
+            </p>
+            <h2
+                class="w-full mt-2 text-3xl font-bold leading-9 text-gray-800 xl:w-8/12 lg:w-10/12 lg:text-4xl lg:leading-10"
+            >
+                {{about_title}}
+            </h2>
+            <p
+                class="mt-6 text-base font-normal leading-6 text-gray-600"
+            >
+                {{description}}
+            </p>
+        </div>
+
+        <div class="mt-12 lg:mt-14 sm:mt-10">
+            <img
+                class="hidden w-full lg:block"
+                src="{{about_us_image}}"
+                alt="Group of people Chilling"
+            />
+            <img
+                class="hidden w-full lg:hidden sm:block"
+                src="{{about_us_image}}"
+                alt="Group of people Chilling"
+            />
+            <img
+                class="block w-full sm:hidden"
+                src="{{about_us_image}}"
+                alt="Group of people Chilling"
+            />
+        </div>
+
+        <div
+            class="flex flex-col justify-between gap-12 mt-16 lg:mt-16 sm:mt-12 lg:flex-row lg:gap-8"
+        >
+            {{content}} {{if type === 'block'}}
+            <div class="w-full xl:w-5/12 lg:w-6/12">
+                <h2
+                    class="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9"
+                >
+                   {{title}}
+                </h2>
+                <div
+                    class="mt-4 text-base font-normal leading-8 text-gray-600"
+                >
+                   {{content_editor}}
+            </div>
+           
+            </div>
+            {{elseif type === 'image'}}
+            <div class="items-center w-full lg:flex lg:w-1/2">
+                <img
+                    class="hidden w-full lg:block"
+                    src="{{image}}"
+                    alt="{{alt}}"
+                />
+                <img
+                    class="hidden w-full lg:hidden sm:block h-3/4"
+                    src="{{image}}"
+                    alt="{{alt}}"
+                />
+                <img
+                    class="block w-full sm:hidden"
+                    src="{{image}}"
+                    alt="{{alt}}"
+                />
+            </div>
+            {{/if}} {{/content}}
+        </div>
+        <div class="flex justify-start mt-5">
+            {{ partial:components.buttons.buttons }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ partial:snippets/seo }}
+    <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" />
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css" />
+    <script src="
+    https://cdn.jsdelivr.net/npm/swiper@9.0.0-beta.1/swiper-bundle.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/swiper@9.0.0-beta.1/swiper-bundle.min.css
+    " rel="stylesheet">
+    
+    {{ livewire:styles }}
+</head>
+
+<body class="font-sans leading-normal text-gray-800 bg-gray-100">
+    <!-- ========== HEADER ========== -->
+    <header>{{partial:partials.header}}</header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main-content">
+        {{ template_content }}
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- ========== FOOTER ========== -->
+    <footer class="basic-footer">{{partial:partials.footer}}</footer>
+    <!-- ========== END FOOTER ========== -->
+    <script src="{{ mix src='/js/site.js' }}"></script>
+    {{ livewire:scripts }}
+    {{ configuration:scripts }}
+    {{if type === 'script'}}
+    {{ script_code }}
+    {{/if}}
+    {{ /configuration:scripts }}
+</body>
+
+</html>
