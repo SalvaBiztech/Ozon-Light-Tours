@@ -1,4 +1,5 @@
 import('preline')
+import 'flowbite';
 
 
 var swiper = new Swiper('.heroSwiper', {
