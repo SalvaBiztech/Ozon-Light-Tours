@@ -1,8 +1,4 @@
 name: Admin
 super: true
-id: 0d103c4d-b8e5-4ceb-9441-a7ecb26766db
-password_hash: $2y$10$FC6aMyCjlp/t2kOsYQKysu3We5EQnvgCVcZ4KCQuu0rXd8q5H50qm
-preferences:
-  collections:
-    pages:
-      after_save: continue_editing
+id: 734d02b6-62f0-42ab-b8ce-b90b2c203251
+password_hash: $2y$10$cF8G8eOrbkmGiRyO5CUxZOp.UAovaP3XCVRdiM6vr9wcuzS2g.cO2
