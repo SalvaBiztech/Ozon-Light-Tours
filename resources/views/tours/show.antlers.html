@@ -1,0 +1,108 @@
+<section class="mb-2 text-gray-800 text-center lg:text-left background-radial-gradient">
+
+  <div class="relative overflow-hidden bg-no-repeat bg-cover" style="
+          background-position: 60%;
+          background-image: url('{{featured_image}}');
+          height: 400px;
+        ">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+      style="background-color: rgba(0, 0, 0, 0.55)">
+      <div class="flex justify-center items-center h-full">
+        <div class="text-center text-white px-6 py-6 md:py-0 md:px-12 max-w-[800px]">
+          <h1 class="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-12">
+            {{title}}
+          </h1>
+          <!-- <p class="text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima officia
+              consequatur adipisci tenetur repudiandae rerum quos.
+            </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<main class="container mx-auto max-w-6xl py-8 px-5">
+  <!-- Overview Section -->
+  <section class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <h2 class="text-xl font-semibold bg-gray-600 text-white p-3 mb-6">Overview</h2>
+    <div class="text-sm font-sans leading-7">
+      {{tour_overview}}
+    </div>
+  </section>
+  <!-- Itinerary Section -->
+  <section class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <h2 class="text-xl font-semibold bg-gray-600 text-white p-3 mb-6">Itinerary</h2>
+    <!-- Add itinerary details here -->
+    {{day_by_day}}
+    {{if type == 'day'}}
+    <div class="leading-9 font-sans text-sm mb-6 border-b-2 py-4">
+      {{if destination_image}}
+      <div class="mb-4">
+        <img class="object-cover object-center w-full h-full lg:h-64 rounded" src="{{destination_image}}" alt="{{title}}" />
+      </div>
+      {{/if}}
+      <h3 class="text-lg font-semibold mb-2">
+        Day {{day_no}}: {{day_title}}
+      </h3>
+      <div class="text-sm font-sans leading-8 mb-4">
+        {{day_description}}
+      </div>
+      <div class="flex flex-col md:flex-row md:justify-between mb-4">
+        <div>
+          <strong>Main Destination:</strong> {{main_destination['value']}}
+        </div>
+        <div>
+          {{if has_accommodation}}
+          <strong>Accommodation:</strong> {{accommodation['value']}}
+          {{else}}
+          <strong>Accommodation:</strong> No Accommodation
+          {{/if}}
+        </div>
+        <div>
+          <strong>Meals & Drinks:</strong> {{meals_drinks['value']}}
+        </div>
+      </div>
+      {{if accommodation_images}}
+      <div class="mb-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {{accommodation_images}}
+        <img class="object-cover object-center w-full h-full lg:h-72 rounded" src="{{url}}" alt="" />
+        {{/accommodation_images}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+    {{/day_by_day}}
+  </section>
+  <!-- Highlights Section -->
+  <section class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <h2 class="text-xl font-semibold bg-gray-600 text-white p-3 mb-6">Tour Inclusions</h2>
+    <div class="grid md:grid-cols-2">
+      <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">
+          Tour Included
+        </h3>
+        <ul class="list-disc list-inside leading-7 text-sm">
+          {{tour_included}}
+          <li>{{value}}</li>
+          {{/tour_included}}
+          <!-- Add more highlights here -->
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2">
+          Tour Excluded
+        </h3>
+        <ul class="list-disc list-inside leading-7 text-sm">
+          {{tour_excluded}}
+          <li>{{value}}</li>
+          {{/tour_excluded}}
+          <!-- Add more highlights here -->
+        </ul>
+      </div>
+    </div>
+
+  </section>
+</main>

@@ -2,3 +2,13 @@ name: Admin
 super: true
 id: 734d02b6-62f0-42ab-b8ce-b90b2c203251
 password_hash: $2y$10$cF8G8eOrbkmGiRyO5CUxZOp.UAovaP3XCVRdiM6vr9wcuzS2g.cO2
+preferences:
+  assets:
+    images:
+      mode: grid
+      per_page: 100
+  collections:
+    tours:
+      after_save: continue_editing
+    pages:
+      after_save: continue_editing
